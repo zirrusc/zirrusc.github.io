@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+	<head>
+		<title>zirrusc</title>
+		<style>
+		body {
+			overflow:hidden;
+			margin:0;
+			padding:0;
+			height:100%;
+		}
+		div.box {
+			height:100px;
+			width:100px;
+			float:left;
+			margin:10px;
+			color:white;
+			text-align:center;
+		}
+		div.title-bar {
+			width:100%;
+			clear:both;
+			height:70px;
+		}
+		div.title-bar div.bar-piece {
+			background:rosybrown;
+			width:20%;
+			height:70px; 
+			border-bottom:1px solid #E2E2E2;
+			float:left;
+		}
+		div.title-bar h1 {
+			color: white; 
+			text-align:center;
+			font-size:30px; 
+			padding-top:12px;
+			font-weight:normal;
+		}	
+		div.title-bar h1 a {
+			color: white; 
+			padding-bottom: 2px;
+		}
+		div.link-box {
+			width:100%; 
+			clear:both; 
+			height: 80px;
+			margin:20px 0;	
+		}
+		div.link-button {
+			height: 80px; 
+			width:200px;
+			margin:0 auto;	
+			text-align:center;
+			line-height: 80px;
+		}
+		a, a.link, a.visited, a.hover,a.active {
+			color: rosybrown;
+		}
+		</style>
+	</head>
+<body charset='utf-8'>
+	<div class="title-bar ignore-gravity">
+		<div class="bar-piece"></div>
+		<div class="bar-piece"></div>
+		<div class="bar-piece">
+			<h1 class="ignore-gravity">zirrusc</h1>
+		</div>
+		<div class="bar-piece"></div>
+		<div class="bar-piece"></div>
+	</div>
+	
+	<div class='link-box ignore-gravity'>
+		<div class='link-button'>
+			<a href='https://github.com/zirrusc' class='ignore-gravity'>GitHub</a>
+		</div>
+	</div>
+	
+	<div class="link-box gravity-button-box ignore-gravity">
+		<div class="link-button gravity-button gravity-event">
+			<a href='#' class="ignore-gravity">Gravity</a>
+		</div>
+	</div>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="jGravity-min.js"></script>
+	<script>
+	$(document).ready(function() {
+		$('div.gravity-event').live('click', function() {
+			$('body').jGravity({
+				target: 'everything',
+				ignoreClass: 'ignore-gravity',
+				weight: 25,
+				depth: 5,
+				drag: true
+			});
+			$(this).removeClass('gravity-event');
+		});
+
+	});
+	</script>
+</body>
+</html>
